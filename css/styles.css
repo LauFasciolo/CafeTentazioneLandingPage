@@ -1,0 +1,703 @@
+
+:root{
+    --blanco: #FFFF;
+    --amarillo-fondo: #F9C881;
+    --beige-claro: #DD9A5E; 
+    --violeta-claro: #9566B0;
+    --violeta-medio-opaco: #5E3E66;
+    --violeta-medio-brillante: #572E61;
+    --violeta-oscuro: #3D2045;
+    --violeta-muy-oscuro: #2E1833;
+
+    --header-height: 3rem;
+   
+}
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html{   
+ background-color: #F9C881;
+
+}
+
+body{
+    font-family:'Public Sans', sans-serif; 
+    background: url(../sgv/curvaarriba.svg) no-repeat 100% 0,
+                url(../sgv/curvaabajo.svg) no-repeat 0 100%;
+}
+
+h1, p, ul{
+    margin: 0;   
+} 
+
+.nav_logo{
+    margin-top: 3%;
+}
+
+ul{
+    padding: 0;
+    list-style: none ;
+}
+
+a{
+    font-family: 'Public Sans', sans-serif;
+    font-weight: 600;
+    font-size: 1.13rem;
+    text-decoration: none;
+    
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+.bd-grid{
+    max-width: 1024px;
+    display:grid;
+    grid-template-columns: 100%;
+    column-gap: 2rem;
+    width: calc(100% - 2rem);
+    margin-left: 1rem;
+    margin-right: 1rem;
+    
+}
+
+.l-header{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 7;
+}
+
+.nav{
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.home_img > .oferta{
+    border-radius: 100%;
+    box-shadow: 3px 3px 10px var(--violeta-muy-oscuro);
+}
+
+.home_description{
+    margin-top: 5%;
+    font-size: 1.6rem;
+}
+
+
+.home_button{
+    display: inline-flex;
+    background-color: var(--violeta-medio-brillante);
+    font-size: 1.35rem;
+    font-style: oblique;
+    color: var(--blanco);
+    padding: 1.5rem 1.8rem;
+    border-radius: .7rem;
+    box-shadow: 3px 3px 9px var(--violeta-muy-oscuro) ;
+  }
+  
+.home_button:hover{
+    background-color: var(--violeta-oscuro);
+}
+
+/*------------------------------------------------*/
+
+@media screen and (min-width: 426px) and (max-width: 768px){
+    body{
+        height: 100vh;
+    }
+    
+    .nav_logo{
+        margin-top: 3rem;
+        width: 140px;
+        height: auto;
+    }
+
+    .nav_menu{
+        position:fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100%;
+        padding: 3.5rem 1.5rem 0 ;
+        background-color: rgba(255, 255, 255, .3);
+        backdrop-filter: blur(9px);
+        transition: .5;   
+    }  
+
+    .nav_link{
+        color: var(--violeta-medio-brillante);
+    }
+
+    .nav_close, .nav_toggle{
+        color: var(--blanco);
+    }
+
+    .nav_toggle{
+        margin-top: 1rem;
+        margin-right: .7rem;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    .home_img{
+        position: relative;
+        padding-top: 1.5rem;
+        margin-top: 7%;
+        justify-self: center;
+        width: 390px;
+        height: 301px;
+    }
+    
+   .home_img > .oferta{
+        width: 70px;
+        height: 70px;
+        margin-left: 2%;
+        margin-top: 45%;
+        animation-name: ofertaefecto;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+   }
+
+   .home_title{
+        line-height: 0.3rem;
+        margin-bottom: .2rem;
+        text-align: center;
+        font-size: 2rem ;
+        font-weight: 800;   
+    }
+
+
+   .home_description{
+        margin-bottom: 0.3%;
+        text-align: center;
+        font-size: 1.3rem;
+        padding: 1rem;
+    }
+   
+    .home_button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 15rem;
+        height: 4rem;
+        margin: auto;
+    }
+}
+
+
+
+.nav_close{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+    cursor:pointer
+}
+
+.nav_close:hover{
+    color:var(--violeta-medio-brillante)
+}
+
+.nav_item{
+    margin-bottom: 2rem ;
+}
+
+
+.nav_link:hover{
+    color: var(--blanco);
+    transform: scale(1.1);
+}
+
+.nav_toggle{
+   
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.nav_toggle:hover{
+    color:var(--violeta-claro);
+}
+
+.show{
+   right: 0;
+}
+
+.home{ 
+    overflow: hidden; 
+}
+
+.home_container{
+    height: calc(100vh - var(--header-height));
+    grid-template-rows: repeat(2, max-content);
+    row-gap: 1.5rem;
+ 
+}
+
+.home_img{
+    position: relative;
+    padding-top: 1.5rem;
+    justify-self: center;
+    width: 390px;
+    height: 301px;
+}
+
+.home_img img{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.home_data{
+    color: var(--violeta-medio-brillante);
+}
+
+.home_title{
+    margin-top: .7rem;
+    line-height: 1.1;
+    margin-bottom: .2rem;
+}
+
+.home_description{
+    margin-bottom: 2.5rem;
+
+}
+
+
+/*-------------------------------------------------*/
+
+@media screen and (min-width: 769px){
+
+    .nav_close, .nav_link, .nav_toggle{
+        color: var(--violeta-claro);
+    }
+
+    .nav{
+        height: cal(var(--header-height) + 1.5rem);
+    }
+    .nav_toggle, .nav_close{
+        display: none;
+    }
+
+    .nav_list{
+        display: flex;
+        color: var(--violeta-claro);
+    }
+
+    .nav_item{
+        margin-left: 1.5rem;
+        margin-bottom: 0;
+        margin-right: 1.2rem;
+
+    }
+
+    .home_container{
+        height: 100vh;
+        grid-template-columns: repeat(2, max-content);
+        grid-template-rows: 1fr;
+        row-gap: 0;
+        align-items: center;
+        justify-content: center;
+    }
+
+   .home_img{
+        margin-top: -18%;
+        margin-right: 10%;
+        order: 1;
+        width: 450px;
+        height: 347px;
+           
+   }
+
+   .home_img img{
+        width: 450px;
+   }
+
+   .home_img > .oferta{
+        width: 90px;
+        height: 90px;
+        box-shadow:10px #572E61;
+        margin-left: 2%;
+        margin-top: 45%;
+        animation-name: ofertaefecto;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+    }
+
+   
+    .home_title{
+        font-size: 2rem;
+        font-weight: 800;
+        line-height:2.2rem;
+        margin-top: .2rem;
+        margin-left: 3rem;
+    }
+
+    .home_description{
+        margin-top: -5%;
+        margin-left: 3%;
+        text-align: center;
+        font-size: 1.35rem;
+        padding: 1rem;
+    }
+
+    .home_button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 14rem;
+        height: 4rem;
+        margin-top: .2rem;
+        margin-left: 3rem;  
+    }
+
+}
+
+ /*------------------------------------------------*/
+
+@media screen and (min-width: 1024px){
+   
+     
+    .bd-grid{
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .nav_list{
+        color: var(--violeta-claro);
+    }
+    .home_container{
+        justify-content: initial;
+        column-gap: 4.5rem; 
+    }
+
+    .home_img{
+        position: relative;
+        margin-top: .2rem;
+        padding-top: .2rem;
+        justify-self: center;
+        width: 636px;
+        height: 490px;
+        margin-right: 12%;
+    }
+
+    .home_img img{
+       width:636px;
+       height: auto;
+    }
+
+    .home_img > .oferta{
+        width: 130px;
+        height: 130px;
+        box-shadow:10px #572E61;
+        margin-left: 2%;
+        margin-top: 45%;
+        animation-name: ofertaefecto;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+    }
+
+    .home_title{
+        font-family: 'Public Sans', sans-serif;
+        font-weight: 800;
+        font-size: 2.7rem;
+        line-height: 2.8rem;
+        margin-top: 25%;
+        margin-left:11%;  
+    }
+  
+    .home_description{
+        text-align: center;
+        margin-top: 6%;
+        margin-left: -0.2%;
+        padding:1rem;
+        font-size: 1.6rem;
+    }
+    
+    .home_button{
+        background-color: var(--violeta-medio-brillante);
+        font-size: 1.35rem;
+        font-style: oblique;
+        color: var(--blanco);
+        margin-top: .1rem;
+        margin-bottom:1.5rem;
+        margin-left: 15%;
+        padding: 1.2rem 2rem;
+        border-radius: .7rem;
+        box-shadow: 3px 3px 9px var(--violeta-muy-oscuro) ;
+        text-align: center;   
+    }
+      
+    .home_button:hover{
+        background-color: var(--violeta-oscuro);
+    }
+    
+}
+
+
+/*---------------------------------------------*/
+@media screen and (max-width: 425px){
+
+    body{
+        height: 100vh;
+    }
+    
+   
+    .nav_logo{
+        margin-top: 2rem;
+        width: 120px;
+        height: auto;
+    }
+
+    .nav_menu{
+        position:fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100%;
+        padding: 3.5rem 1.5rem 0 ;
+        background-color: rgba(255, 255, 255, .3);
+        backdrop-filter: blur(9px);
+        transition: .5;   
+    }  
+
+    .nav_link{
+        color: var(--violeta-medio-brillante);
+    }
+
+    .nav_close, .nav_toggle{
+        color: var(--blanco);
+       
+    }
+
+   .home_img > .oferta{
+        width: 70px;
+        height: 70px;
+        margin-left: 2%;
+        margin-top: 45%;
+        animation-name: ofertaefecto;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+   }
+
+   .nav_close{
+        position: absolute;
+        top: .75rem;
+        right: 1rem;
+        font-size: 2rem;
+        cursor:pointer
+   }
+
+   .nav_close:hover{
+        color:var(--violeta-medio-brillante)
+    }
+
+   .nav_item{
+        margin-bottom: 2rem ;
+    }
+
+
+    .nav_link:hover{
+        color: var(--blanco);
+        transform: scale(1.1);
+    }
+
+    .nav_toggle{
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    .nav_toggle:hover{
+        color:var(--violeta-claro);
+    }
+
+    .show{
+        right: 0;
+    }
+
+    .home{ 
+        overflow: hidden; 
+    }
+
+    .home_container{
+        height: calc(100vh - var(--header-height));
+        grid-template-rows: repeat(2, max-content);
+        row-gap: 1.5rem;
+    }
+
+    .home_img{
+        position: relative;
+        margin-top: 5rem;
+        padding-top: 1.5rem;
+        justify-self: center;
+        width: 302px;
+        height: 233px;
+    }
+
+    .home_img img{
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .home_data{
+        color: var(--violeta-medio-brillante);
+    }
+
+    .home_title{
+        line-height: 1.8rem;
+        margin-bottom: 7%;
+        text-align: center;
+        font-size: 1.8rem ;
+        font-weight: 800;   
+    }
+
+    .home_description{
+        margin-bottom: 7%;
+        margin-top: 1%;
+        text-align: center;
+        font-size: 1.3rem;
+        font-weight: 500;
+        padding: 1rem;
+    }
+
+    .home_button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 15rem;
+        height: 4rem;
+        margin: auto;
+    }
+
+}
+
+@media screen and (min-width: 700px) and (max-width: 930px) and (orientation: landscape){
+
+    body{
+        height: 100vh;
+    }
+    .nav_logo{
+        width: 150px;
+        height: auto;
+    }
+     
+
+    .nav{
+        height: cal(var(--header-height) + 1.5rem);
+    }
+    
+    .nav_list{
+        display: flex;
+        color: var(--violeta-claro); 
+    }
+
+    .nav_link{
+        font-size: 1rem;
+    }
+
+    .nav_item{
+        margin-left: .7rem;
+        margin-bottom: 0;
+        margin-right: 2rem;
+
+    }
+
+    .home_container{
+        height: 100vh;
+        grid-template-columns: repeat(2, max-content);
+        grid-template-rows: 1fr;
+        row-gap: 0;
+        align-items: center;
+        justify-content: center;
+    }
+
+   .home_img > .oferta{
+        width: 70px;
+        height: 70px;
+        margin-left: 2%;
+        margin-top: 45%;
+        animation-name: ofertaefecto;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+   }
+
+   
+
+    .home_container{
+        height: calc(100vh - var(--header-height));
+        grid-template-rows: repeat(2, max-content);
+        row-gap: 1.5rem;
+    }
+
+    .home_img{
+        position: relative;
+        margin-top: 5rem;
+        padding-top: 1.5rem;
+        justify-self: center;
+        width: 302px;
+        height: 233px;
+    }
+
+    .home_img img{
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .home_data{
+        color: var(--violeta-medio-brillante);
+    }
+
+    .home_title{
+        margin-top: 40%;
+        margin-left: 1%;
+        line-height: 1.5rem;
+        margin-bottom: 1%;
+        text-align: center;
+        font-size: 1.5rem ;
+        font-weight: 800;   
+    }
+
+    .home_description{
+        margin-bottom: 3%;
+        margin-top: 1%;
+        margin-left: -10%;
+        text-align: center;
+        font-size: 1.2rem;
+        font-weight: 500;
+        padding: 1rem;
+    }
+
+    .home_button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 14rem;
+        height: 3rem;
+        margin: auto;
+    }
+}
+
+
+
+@keyframes ofertaefecto {
+    0%{
+        transform: scale(1);
+    } 
+    30%{
+        transform: scale(1.2) rotate(13deg);
+    }
+    100%{
+        transform: scale(1);
+    }
+    
+}
